@@ -2,7 +2,11 @@ import "./App.css";
 import React, { useState } from "react";
 
 function App() {
+  //we hold the user's selected number in state
   const [selectedNum, setSelectedNum] = useState(0);
+
+  //we calculate all the prime numbers between 1 and the
+  //user's chosen number(selected number)
 
   const allPrimes = [];
   for (let counter = 2; counter < selectedNum; counter++) {
@@ -22,6 +26,8 @@ function App() {
             type="number"
             value={selectedNum}
             onChange={(event) => {
+              //to prevent computers from exploding,
+              //we will max at 100k
               let num = Math.min(100_000, Number(event.target.value));
               setSelectedNum(num);
             }}
@@ -38,6 +44,7 @@ function App() {
     </>
   );
 }
+//Helper function that calculates weather a given number is prime or not.
 function isPrime(n) {
   const max = Math.ceil(Math.sqrt(n));
 
