@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 
 function App() {
-  const [selectedNum, setSelectedNum] = useState(100);
+  const [selectedNum, setSelectedNum] = useState(0);
 
   const allPrimes = [];
   for (let counter = 2; counter < selectedNum; counter++) {
@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <h2>Prime Number</h2>
+        <h2>Prime Numbers</h2>
         <form action="" className="container">
           <label htmlFor="num" className="text">
             Your Number :{" "}
@@ -27,11 +27,13 @@ function App() {
             }}
           />
         </form>
-        <p>
-          There are {allPrimes.length} prime(s) numbers between 1 and{" "}
-          {selectedNum} :{" "}
-          <span className="prime__list">{allPrimes.join(",")}</span>
-        </p>
+        <div className="text__container">
+          <p>
+            There are {allPrimes.length} prime(s) numbers between 1 and{" "}
+            {selectedNum} :{" "}
+            <span className="prime__list">{allPrimes.join(",")}</span>
+          </p>
+        </div>
       </div>
     </>
   );

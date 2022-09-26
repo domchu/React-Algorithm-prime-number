@@ -18,4 +18,13 @@ input {
 .text {
   margin: 2rem 0;
   font-weight: 600;
+  font-size: 1.5rem;
+}
+h2 {
+  margin-top: 5rem;
+}
+p {
+  font-size: 1.5rem;
+}
+.text__container {
 }
