@@ -16,7 +16,7 @@ function App() {
         <h2>Prime Number</h2>
       </div>
       <form action="">
-        <label htmlFor="num">Your Prime:</label>
+        <label htmlFor="num">Your Number : </label>
         <input
           type="number"
           value={selectedNum}
@@ -27,11 +27,25 @@ function App() {
         />
       </form>
       <p>
-        there are {allPrimes.length} prime(s) between 1 and {selectedNum}:{" "}
-        <span>{allPrimes.join(",")}</span>
+        There are {allPrimes.length} prime(s) numbers between 1 and{" "}
+        {selectedNum} :{" "}
+        <span className="prime__list">{allPrimes.join(",")}</span>
       </p>
     </>
   );
 }
+function isPrime(n) {
+  const max = Math.ceil(Math.sqrt(n));
 
+  if (n === 2) {
+    return true;
+  }
+
+  for (let counter = 2; counter <= max; counter++) {
+    if (n % counter === 0) {
+      return false;
+    }
+  }
+  return true;
+}
 export default App;
