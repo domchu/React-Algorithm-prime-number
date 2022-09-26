@@ -14,23 +14,25 @@ function App() {
     <>
       <div className="App">
         <h2>Prime Number</h2>
+        <form action="" className="container">
+          <label htmlFor="num" className="text">
+            Your Number :{" "}
+          </label>
+          <input
+            type="number"
+            value={selectedNum}
+            onChange={(event) => {
+              let num = Math.min(100_000, Number(event.target.value));
+              setSelectedNum(num);
+            }}
+          />
+        </form>
+        <p>
+          There are {allPrimes.length} prime(s) numbers between 1 and{" "}
+          {selectedNum} :{" "}
+          <span className="prime__list">{allPrimes.join(",")}</span>
+        </p>
       </div>
-      <form action="">
-        <label htmlFor="num">Your Number : </label>
-        <input
-          type="number"
-          value={selectedNum}
-          onChange={(event) => {
-            let num = Math.min(100_000, Number(event.target.value));
-            setSelectedNum(num);
-          }}
-        />
-      </form>
-      <p>
-        There are {allPrimes.length} prime(s) numbers between 1 and{" "}
-        {selectedNum} :{" "}
-        <span className="prime__list">{allPrimes.join(",")}</span>
-      </p>
     </>
   );
 }
