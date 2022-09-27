@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  width: 40%;
+  margin: auto;
+  /* word-wrap: anywhere; */
 }
 .container {
   display: flex;
@@ -27,4 +30,5 @@ p {
   font-size: 1.5rem;
 }
 .text__container {
+  width: 100%;
 }

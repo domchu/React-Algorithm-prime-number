@@ -37,7 +37,7 @@ function App() {
           <p>
             There are {allPrimes.length} prime(s) numbers between 1 and{" "}
             {selectedNum} :{" "}
-            <span className="prime__list">{allPrimes.join(",")}</span>
+            <span className="prime__list">{allPrimes.join(", ")} </span>
           </p>
         </div>
       </div>
